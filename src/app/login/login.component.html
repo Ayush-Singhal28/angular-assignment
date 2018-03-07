@@ -1,0 +1,25 @@
+<h1>Login Form</h1>
+<div>
+  <form #userForm="ngForm" (ngSubmit)="onFormSubmit(userForm)">
+    <div>
+      Email: <input name="email"  ngModel required #userEmail="ngModel" >
+    </div>
+    <div>
+      Password: <input name="password" type="password"  ngModel required #userPassword ="ngModel">
+    </div>
+    <button>Submit</button>
+  </form>
+</div>
+<div>
+  <p>Form valid: <b> {{ userForm.valid }} </b></p>
+  <p>Form touched: <b> {{ userForm.touched }} </b></p>
+  <p>Form submitted: <b> {{ userForm.submitted }} </b></p>
+</div>
+<div>
+  <p>Email value: <b> {{ userEmail.value }} </b></p>
+  <p>Email valid: <b> {{ userEmail.valid }} </b></p>
+</div>
+<div>
+  <p>Password valid: <b> {{ userPassword.valid }} </b></p>
+</div>
+<router-outlet></router-outlet>
